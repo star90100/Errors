@@ -1,0 +1,21 @@
+package deverionx.tutorial.common.core;
+
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.IFuelHandler;
+import cpw.mods.fml.common.registry.GameRegistry;
+import deverionx.tutorial.common.Main;
+public class FuelHandler implements IFuelHandler{
+@Override
+public int getBurnTime(ItemStack fuel) { //This method sets burn time
+if(fuel.itemID == Main.ruby.itemID){
+return 150; //1/4 of coal
+}
+
+return 0;
+
+
+GameRegistry.registerFuelHandler(new FuelHandler());
+
+
+}
+}
